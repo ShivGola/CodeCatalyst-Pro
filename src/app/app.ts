@@ -1,12 +1,18 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { HeaderComponent } from './components/header/header'; 
+import { HeroComponent } from './components/hero/hero';
+import { RouterOutlet } from "@angular/router";
+
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true,
+  imports: [CommonModule, HeaderComponent, RouterOutlet],
   templateUrl: './app.html',
-  styleUrl: './app.scss'
+  styleUrls: ['./app.scss']
 })
-export class App {
-  protected readonly title = signal('code-catalyst-pro');
+// Class ka naam 'AppComponent' hona chahiye
+export class AppComponent { 
+  title = 'code-catalyst-pro';
 }

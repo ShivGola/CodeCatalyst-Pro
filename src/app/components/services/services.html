@@ -1,0 +1,17 @@
+<section class="services-wipro" id="solutions">
+  <div class="section-container">
+    
+    <div class="zigzag-row" *ngFor="let s of serviceList; let i = index" [class.reverse]="i % 2 !== 0">
+      <div class="zigzag-text">
+        <small>{{ s.id }} / EXPERTISE</small>
+        <h2>{{ s.title }}</h2>
+        <p>{{ s.desc }}</p>
+      </div>
+      
+      <div class="zigzag-icon">
+        <span class="icon-box">{{ s.icon }}</span>
+      </div>
+    </div>
+
+  </div>
+</section>

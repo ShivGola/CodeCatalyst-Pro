@@ -1,0 +1,697 @@
+
+
+<!-- Hero Section -->
+<section id="hero" class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <h1>Ambitions Realized Through <span class="highlight">Innovation.</span></h1>
+      <p>5+ years of delivering high-velocity IT solutions. We transform complex challenges into digital opportunities.</p>
+      <button class="btn-primary" (click)="exploreSolutions()">
+        Explore Solutions
+      </button>
+    </div>
+    <div class="hero-image">
+      <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1000&q=80" alt="Innovation">
+    </div>
+  </div>
+</section>
+
+<!-- Expertise Section with Debug Classes -->
+<section id="expertise-section" class="expertise" style="display: block; min-height: 500px; background: #ffffff;">
+  <div class="container" style="max-width: 1280px; margin: 0 auto; padding: 0 40px;">
+    
+    <!-- Item 1 -->
+    <div class="expertise-item" style="display: flex; margin-bottom: 80px;">
+      <div class="expertise-text" style="flex: 2;">
+        <span class="tag" style="font-size: 0.7rem; letter-spacing: 3px; color: #999;">01 / EXPERTISE</span>
+        <h2 style="font-size: 2.2rem; margin: 16px 0; color: #000;">Custom Web Solutions</h2>
+        <p style="color: #666; line-height: 1.7;">We build scalable enterprise applications using Angular and .NET Core. Our focus is 100% on performance and security.</p>
+      </div>
+      <div class="expertise-icon" style="flex: 1; text-align: center; font-size: 4rem;">
+        <i class="fas fa-code"></i>
+      </div>
+    </div>
+
+    <!-- Item 2 - Reverse -->
+    <div class="expertise-item reverse" style="display: flex; flex-direction: row-reverse; margin-bottom: 80px;">
+      <div class="expertise-text" style="flex: 2;">
+        <span class="tag" style="font-size: 0.7rem; letter-spacing: 3px; color: #999;">02 / EXPERTISE</span>
+        <h2 style="font-size: 2.2rem; margin: 16px 0; color: #000;">Mobile Application</h2>
+        <p style="color: #666; line-height: 1.7;">High-speed Android and iOS apps using Ionic & Capacitor. 5 years of experience in real-time GPS and API integration.</p>
+      </div>
+      <div class="expertise-icon" style="flex: 1; text-align: center; font-size: 4rem;">
+        <i class="fas fa-mobile-alt"></i>
+      </div>
+    </div>
+
+    <!-- Item 3 -->
+    <div class="expertise-item" style="display: flex; margin-bottom: 80px;">
+      <div class="expertise-text" style="flex: 2;">
+        <span class="tag" style="font-size: 0.7rem; letter-spacing: 3px; color: #999;">03 / EXPERTISE</span>
+        <h2 style="font-size: 2.2rem; margin: 16px 0; color: #000;">Cloud Infrastructure</h2>
+        <p style="color: #666; line-height: 1.7;">Seamless data management with Firebase and Google Cloud. Zero downtime, maximum reliability.</p>
+      </div>
+      <div class="expertise-icon" style="flex: 1; text-align: center; font-size: 4rem;">
+        <i class="fas fa-cloud-upload-alt"></i>
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- Team Section - Co-founders -->
+<section id="team-section" class="team-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">OUR LEADERSHIP</span>
+      <h2>Meet Our <span>Co-founders</span></h2>
+      <p class="description">Visionary leaders driving innovation and excellence</p>
+    </div>
+
+    <div class="team-grid">
+      <!-- Co-founder 1 -->
+      <div class="team-card">
+        <div class="team-image">
+          <img src="assets/images/cofounder2.jpeg" alt="Wassem Sir">
+          <div class="team-social">
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+        <div class="team-info">
+          <h3>Wassem Sir</h3>
+          <span class="designation">Co-founder & Chief Technology Officer (CTO)</span>
+          <p>4.5+ years of expertise in architecting high-velocity digital solutions. Specialist in Angular, .NET Core, and Cross-Platform Mobile ecosystems. Passionate about transforming complex business logic into scalable software architecture.</p>
+        </div>
+      </div>
+
+      <!-- Co-founder 2 -->
+      <div class="team-card">
+        <div class="team-image">
+          <img src="assets/images/cofounder1.jpeg" alt="Shiv Sir">
+          <div class="team-social">
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+       <div class="team-info">
+        <h3>Sanjeev Kumar</h3>
+        <span class="designation">Co-founder & Chief Technology Officer (CTO)</span>
+        
+        <p>
+          5+ years of expertise in architecting high-velocity digital solutions. 
+          Specialist in Angular, .NET Core, and Cross-Platform Mobile ecosystems. 
+          <strong>NASSCOM Certified Data Analytics Professional</strong> with a passion for 
+          transforming complex business logic into scalable software architecture and 
+          data-driven insights.
+        </p>
+      </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Banner -->
+<section class="cta-banner">
+  <div class="container">
+    <h2>Let's build the future together.</h2>
+    <button class="btn-outline">Start a Project</button>
+  </div>
+</section>
+<!-- Portfolio / Projects Section -->
+<section id="portfolio-section" class="portfolio-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">OUR WORK</span>
+      <h2>Featured <span>Projects</span></h2>
+      <p class="description">Explore our success stories across various domains</p>
+    </div>
+
+    <!-- Filter Buttons -->
+    <div class="portfolio-filters">
+      <button class="filter-btn" [class.active]="activeFilter === 'all'" (click)="setFilter('all')">
+        All Projects
+      </button>
+      <ng-container *ngFor="let domain of domains">
+        <button class="filter-btn" *ngIf="domain !== 'all'"
+                [class.active]="activeFilter === domain" 
+                (click)="setFilter(domain)">
+          {{ domain }}
+        </button>
+      </ng-container>
+    </div>
+
+    <!-- Projects Grid -->
+    <div class="projects-grid">
+      <div class="project-card" *ngFor="let project of filteredProjects" (click)="openProjectModal(project)">
+        <div class="project-image">
+          <img [src]="project.image" [alt]="project.title">
+          <div class="project-overlay">
+            <span class="project-domain">{{ project.domain }}</span>
+            <button class="view-btn">View Details</button>
+          </div>
+        </div>
+        <div class="project-content">
+          <div class="project-category">{{ project.category }}</div>
+          <h3>{{ project.title }}</h3>
+          <p>{{ project.description }}</p>
+          <div class="project-tech">
+            <span *ngFor="let tech of project.techStack.slice(0, 3)">{{ tech }}</span>
+            <span *ngIf="project.techStack.length > 3" class="more">+{{ project.techStack.length - 3 }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Project Details Modal -->
+<div class="modal-overlay" *ngIf="showProjectModal" (click)="closeProjectModal()">
+  <div class="project-modal" (click)="$event.stopPropagation()">
+    <button class="modal-close" (click)="closeProjectModal()">
+      <i class="fas fa-times"></i>
+    </button>
+    
+    <div class="modal-content" *ngIf="selectedProject">
+      <div class="modal-image">
+        <img [src]="selectedProject.image" [alt]="selectedProject.title">
+        <div class="modal-badge">{{ selectedProject.domain }}</div>
+      </div>
+      
+      <div class="modal-body">
+        <div class="modal-header">
+          <h2>{{ selectedProject.title }}</h2>
+          <span class="category">{{ selectedProject.category }}</span>
+          <span class="year">{{ selectedProject.year }}</span>
+        </div>
+        
+        <p class="modal-description">{{ selectedProject.description }}</p>
+        
+        <div class="tech-stack">
+          <h4>Technology Stack</h4>
+          <div class="tech-tags">
+            <span *ngFor="let tech of selectedProject.techStack" class="tech-tag">
+              {{ tech }}
+            </span>
+          </div>
+        </div>
+        
+        <div class="key-features">
+          <h4>Key Features</h4>
+          <ul>
+            <li *ngFor="let feature of selectedProject.keyFeatures">
+              <i class="fas fa-check-circle"></i> {{ feature }}
+            </li>
+          </ul>
+        </div>
+        
+        <div class="modal-actions">
+          <button class="btn-primary" (click)="scrollToContact()">
+            Discuss Similar Project
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Trust Indicators Section -->
+<section class="stats-section">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-number">5+</div>
+        <div class="stat-label">Years of Excellence</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">100+</div>
+        <div class="stat-label">Projects Delivered</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">50+</div>
+        <div class="stat-label">Happy Clients</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">24/7</div>
+        <div class="stat-label">Support Available</div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Brands/Client Logos Section -->
+<section class="brands-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">TRUSTED BY</span>
+      <h2>Our Valued <span>Clients</span></h2>
+    </div>
+    <div class="brands-grid">
+      <div class="brand-item">
+        <img src="assets/images/brand1.png" alt="Client Logo">
+      </div>
+      <div class="brand-item">
+        <img src="assets/images/brand2.png" alt="Client Logo">
+      </div>
+      <div class="brand-item">
+        <img src="assets/images/brand3.png" alt="Client Logo">
+      </div>
+      <div class="brand-item">
+        <img src="assets/images/brand4.png" alt="Client Logo">
+      </div>
+      <div class="brand-item">
+        <img src="assets/images/brand5.png" alt="Client Logo">
+      </div>
+      <div class="brand-item">
+        <img src="assets/images/brand6.png" alt="Client Logo">
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Enhanced Testimonials Section -->
+<section class="testimonials-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">CLIENT LOVE</span>
+      <h2>What Our <span>Clients Say</span></h2>
+      <p class="description">Don't just take our word for it - hear from our satisfied clients</p>
+    </div>
+
+    <div class="testimonials-grid">
+      <div class="testimonial-card" *ngFor="let f of (allFeedbacks$ | async)">
+        <div class="quote-icon">“</div>
+        <p class="testimonial-text">{{ f.message }}</p>
+        <div class="rating">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <div class="client-info">
+          <h4>{{ f.name }}</h4>
+          <p class="project-name">Project: {{ f.project_name }}</p>
+          <small>{{ f.createdAt?.toDate() | date:'mediumDate' }}</small>
+        </div>
+      </div>
+    </div>
+
+    <!-- Google Reviews Link -->
+    <div class="google-reviews">
+      <a href="#" class="google-btn">
+        <i class="fab fa-google"></i> See all reviews on Google
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- How We Work Section -->
+<section class="process">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">HOW WE WORK</span>
+      <h2>Our Execution <span>Framework</span></h2>
+    </div>
+    <div class="process-grid">
+      <div class="process-card">
+        <div class="step-number">01</div>
+        <h4>Discovery</h4>
+        <p>Aapke idea ko samajhna aur market research karna humara pehla step hai.</p>
+      </div>
+      <div class="process-card">
+        <div class="step-number">02</div>
+        <h4>Strategy</h4>
+        <p>5 saal ke experience ke sath hum best tech stack (Angular/Ionic) select karte hain.</p>
+      </div>
+      <div class="process-card">
+        <div class="step-number">03</div>
+        <h4>Execution</h4>
+        <p>High-speed coding aur robust architecture build karna humari expertise hai.</p>
+      </div>
+      <div class="process-card">
+        <div class="step-number">04</div>
+        <h4>Delivery</h4>
+        <p>Rigorous testing ke baad hum bug-free product live karte hain.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Industries Section - EXACTLY as per screenshot -->
+<section class="industries">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">OUR SECTOR EXPERTISE</span>
+      <h2>Industries We Transform</h2>
+    </div>
+    <div class="industries-grid">
+      <!-- Healthcare -->
+      <div class="industry-card">
+        <div class="industry-icon">
+          <i class="fas fa-hospital-user"></i>
+        </div>
+        <h3>Healthcare</h3>
+        <ul>
+          <li>Advanced Diagnostics</li>
+          <li>Telemedicine Platforms</li>
+          <li>Electronic Health Records</li>
+          <li>Patient Management Systems</li>
+        </ul>
+      </div>
+      
+      <!-- Agri-Tech -->
+      <div class="industry-card">
+        <div class="industry-icon">
+          <i class="fas fa-leaf"></i>
+        </div>
+        <h3>Agri-Tech</h3>
+        <ul>
+          <li>Smart Inventory Management</li>
+          <li>Market Tracking Systems</li>
+          <li>Crop Monitoring Solutions</li>
+          <li>Supply Chain Optimization</li>
+        </ul>
+      </div>
+      
+      <!-- E-Commerce -->
+      <div class="industry-card">
+        <div class="industry-icon">
+          <i class="fas fa-shopping-cart"></i>
+        </div>
+        <h3>E-Commerce</h3>
+        <ul>
+          <li>Online Shopping Platforms</li>
+          <li>Payment Gateway Integration</li>
+          <li>Inventory Management</li>
+          <li>Customer Analytics</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Core Competencies Section -->
+<section class="competencies">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">OUR CORE COMPETENCIES</span>
+      <h2>Advanced Tech Stack & Technical Expertise</h2>
+      <p class="description">We don't just write code; we architect sustainable digital ecosystems using the most reliable frameworks in the industry today.</p>
+    </div>
+    <div class="competencies-grid">
+      <div class="competency-card">
+        <div class="card-header">
+          <i class="fab fa-angular"></i>
+          <h4>Enterprise Web Development (Angular)</h4>
+        </div>
+        <p>Angular is more than just a framework; it's a foundation for building heavy-duty, scalable business applications. At <strong>CodeCatalyst</strong>, we leverage Angular's modular architecture to build high-performance web dashboards that ensure smooth data flow and ironclad security. Our approach focuses on Reactive Programming with RxJS and robust State Management, making it ideal for handling complex business logic and thousands of concurrent users without compromising on speed or reliability.</p>
+      </div>
+      <div class="competency-card">
+        <div class="card-header">
+          <i class="fab fa-ionic"></i>
+          <h4>Hybrid Mobile Ecosystem (Ionic & Firebase)</h4>
+        </div>
+        <p>In today's multi-device world, efficiency is key. We utilize the Ionic Framework to provide "Single Codebase" solutions that deliver native-like performance across Android, iOS, and Web platforms. By integrating Firebase for real-time database management and secure authentication, we build apps that feature offline synchronization and seamless hardware access (Camera, GPS, etc.). This strategy significantly reduces development costs for our clients while maximizing their market reach and user engagement.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Careers Section -->
+<section class="careers">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">JOIN OUR TEAM</span>
+      <h2>Career Opportunities at CodeCatalyst</h2>
+      <p class="description">We are currently <strong>expanding our digital infrastructure team</strong>. If you are passionate about Angular, Ionic, or Backend technologies, we would love to hear from you. Fill out the application below, and our HR team will get in touch.</p>
+    </div>
+    <div class="job-form-container">
+      <form [formGroup]="jobForm" (ngSubmit)="submitJobApplication()">
+        <div class="form-grid">
+          <input type="text" formControlName="candidate_name" placeholder="Full Name">
+          <input type="email" formControlName="candidate_email" placeholder="Email Address">
+          <input type="text" formControlName="position" placeholder="Position (e.g., Frontend Dev)">
+          <input type="text" formControlName="experience" placeholder="Experience (Years)">
+          <textarea formControlName="portfolio_link" placeholder="Portfolio or Resume Link (Google Drive/GitHub)" rows="3"></textarea>
+          <button type="submit" class="btn-primary" [disabled]="!jobForm.valid">Apply for Job</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Success Stories / Portfolio Section -->
+<section class="portfolio">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">SUCCESS STORIES</span>
+      <h2>Transforming Industries with <span>Code</span></h2>
+    </div>
+    <div class="portfolio-grid">
+      <!-- Case Study 1 -->
+      <div class="case-card">
+        <div class="case-image">
+          <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80" alt="Healthcare">
+          <div class="badge">HEALTHTECH</div>
+        </div>
+        <div class="case-content">
+          <h3>CareFinder: Smart Medical Ecosystem</h3>
+          <p>Humne ek aisi platform banayi jo doctors aur patients ko real-time mein connect karti hai. Isme advanced GPS tracking aur emergency ambulance booking system integrated hai.</p>
+          <button class="btn-link">Read Case Study <i class="fas fa-arrow-right"></i></button>
+        </div>
+      </div>
+      
+      <!-- Case Study 2 -->
+      <div class="case-card">
+        <div class="case-image">
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="PropTech">
+          <div class="badge">PROPTECH</div>
+        </div>
+        <div class="case-content">
+          <h3>Lease Health Check: Data Analytics</h3>
+          <p>Property management ko asaan banane ke liye humne ek data-driven questionnaire system banaya. Yeh tool complex lease agreements ki efficiency ko evaluate karta hai.</p>
+          <button class="btn-link">Read Case Study <i class="fas fa-arrow-right"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Contact Form Section -->
+<section class="contact" id="inquiry-form-section">
+  <div class="container">
+    <div class="contact-card">
+      <div class="contact-header">
+        <span class="section-tag">GET IN TOUCH</span>
+        <h2>Ready to Start your <span>Next Project?</span></h2>
+        <p>Fill out the form below; the <strong>CodeCatalyst</strong> team will get back to you within 24 hours. We look forward to connecting with you!</p>
+      </div>
+      
+      <form [formGroup]="contactForm" (ngSubmit)="submitForm()">
+        <div class="form-grid">
+          <div class="input-group">
+            <label>Full Name <span class="required">*</span></label>
+            <input type="text" formControlName="name" placeholder="E.g. Sanjeev Kumar">
+            <div class="error-message" *ngIf="contactForm.get('name')?.touched && contactForm.get('name')?.invalid">
+              Name is required
+            </div>
+          </div>
+          
+          <div class="input-group">
+            <label>Email Address <span class="required">*</span></label>
+            <input type="email" formControlName="email" placeholder="name@company.com">
+            <div class="error-message" *ngIf="contactForm.get('email')?.touched && contactForm.get('email')?.invalid">
+              Valid email is required
+            </div>
+          </div>
+          
+          <div class="input-group full-width">
+            <label>How can we help you? <span class="required">*</span></label>
+            <textarea formControlName="message" rows="6" placeholder="Describe your project, speed requirements, and goals..."></textarea>
+            <div class="error-message" *ngIf="contactForm.get('message')?.touched && contactForm.get('message')?.invalid">
+              Message is required (minimum 10 characters)
+            </div>
+          </div>
+        </div>
+        
+        <div class="form-action">
+          <button type="submit" class="btn-primary" [disabled]="!contactForm.valid">
+            Send Query <i class="fas fa-arrow-right"></i>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Certifications Section -->
+<section class="certifications-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">CERTIFICATIONS</span>
+      <h2>Our <span>Expertise</span> Recognized</h2>
+    </div>
+    <div class="cert-grid">
+      <div class="cert-item">
+        <i class="fab fa-angular"></i>
+        <h4>Angular Certified</h4>
+        <p>Google Developer Experts</p>
+      </div>
+      <div class="cert-item">
+        <i class="fab fa-microsoft"></i>
+        <h4>Microsoft Partner</h4>
+        <p>.NET Core Specialists</p>
+      </div>
+      <div class="cert-item">
+        <i class="fab fa-google"></i>
+        <h4>Google Cloud Partner</h4>
+        <p>Firebase Experts</p>
+      </div>
+      <div class="cert-item">
+        <i class="fab fa-aws"></i>
+        <h4>AWS Certified</h4>
+        <p>Cloud Solutions</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About Section with Co-founders -->
+<section class="about-section">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-content">
+        <span class="section-tag">OUR STORY</span>
+        <h2>Built by <span>Visionaries</span></h2>
+        <p>CodeCatalyst was founded in 2019 by a team of passionate technologists who believed in transforming ideas into impactful digital solutions.</p>
+        <p>With over 5+ years of collective experience in top tech companies, our co-founders bring unparalleled expertise in enterprise software, cloud computing, and mobile technologies.</p>
+        <div class="stats">
+          <div class="stat">
+            <h3>5+</h3>
+            <p>Years of Excellence</p>
+          </div>
+          <div class="stat">
+            <h3>100+</h3>
+            <p>Projects Delivered</p>
+          </div>
+          <div class="stat">
+            <h3>50+</h3>
+            <p>Happy Clients</p>
+          </div>
+        </div>
+      </div>
+      <div class="about-images">
+        <div class="cofounder-img">
+          <img src="assets\images\cofounders.jpeg" alt="Co-founders">
+          <div class="img-caption">Our Co-founding Team</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="faq-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">FAQ</span>
+      <h2>Frequently Asked <span>Questions</span></h2>
+    </div>
+    <div class="faq-grid">
+      <div class="faq-item" *ngFor="let faq of faqs; let i = index">
+        <div class="faq-question" (click)="toggleFaq(i)">
+          <h3>{{ faq.question }}</h3>
+          <i class="fas" [class.fa-chevron-up]="faq.open" [class.fa-chevron-down]="!faq.open"></i>
+        </div>
+        <div class="faq-answer" [class.open]="faq.open">
+          <p>{{ faq.answer }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">Code<span>Catalyst</span></div>
+        <p>Accelerating digital transformation through innovative software solutions. Global engineering for a smarter future.</p>
+        <div class="social-links">
+          <i class="fab fa-linkedin-in"></i>
+          <i class="fab fa-twitter"></i>
+          <i class="fab fa-github"></i>
+          <i class="fab fa-instagram"></i>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>SOLUTIONS</h4>
+        <ul>
+          <li>Web Experience</li>
+          <li>Enterprise Apps</li>
+          <li>Cloud Solutions</li>
+          <li>AI & Data Science</li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>COMPANY</h4>
+        <ul>
+          <li>About Us</li>
+          <li>Our Expertise</li>
+          <li>Portfolio</li>
+          <li>Careers</li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>GLOBAL CONTACT</h4>
+        <p><i class="fas fa-map-marker-alt"></i> Noida | Moradabad, India</p>
+        <p><i class="fas fa-envelope"></i> codecatalystitsolution@gmail.com</p>
+        <button class="footer-cta" (click)="handleContactClick()">Connect Now</button>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="copyright">© 2026 CodeCatalyst IT Solutions. All Rights Reserved.</div>
+      <div class="legal-links">
+        <span>Privacy Policy</span>
+        <span>Terms of Service</span>
+        <span>Cookies Settings</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Feedback Popup -->
+<div *ngIf="showFeedbackForm" class="popup-wrapper" (click)="onWrapperClick($event)">
+  <div class="popup-card" (click)="$event.stopPropagation()">
+    <button class="close-btn" (click)="closeFeedback()">
+      <i class="fas fa-times"></i>
+    </button>
+    <div class="popup-header">
+      <h3>Quick Feedback</h3>
+      <div class="header-divider"></div>
+    </div>
+    <form [formGroup]="feedbackForm" (ngSubmit)="submitFeedback()">
+      <div class="form-group">
+        <label>Full Name</label>
+        <input type="text" formControlName="name" placeholder="E.g., Ankit">
+      </div>
+      <div class="form-group">
+        <label>Project Name</label>
+        <input type="text" formControlName="project_name" placeholder="E.g., CareFinder">
+      </div>
+      <div class="form-group">
+        <label>Experience</label>
+        <textarea formControlName="message" rows="4" placeholder="How was your experience..."></textarea>
+      </div>
+      <button type="submit" class="btn-primary full-width" [disabled]="!feedbackForm.valid">
+        Send Feedback
+      </button>
+    </form>
+  </div>
+</div>
+<!-- Toast Notification -->
+<div class="toast-notification" *ngIf="showToast">
+  <i class="fas" [class.fa-check-circle]="toastMessage.includes('✅')" 
+     [class.fa-exclamation-triangle]="toastMessage.includes('⚠️')"
+     [class.fa-info-circle]="!toastMessage.includes('✅') && !toastMessage.includes('⚠️')"></i>
+  {{ toastMessage }}
+</div>

@@ -1,0 +1,76 @@
+/* Career Categories Section */
+.career-categories {
+  padding: 80px 5%;
+  background-color: #ffffff;
+  text-align: center;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    h2 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: #1a1a1c;
+      margin-bottom: 50px;
+      text-transform: uppercase;
+      letter-spacing: -1px;
+
+      span {
+        color: #3880ff; /* Wipro/Corporate Blue */
+      }
+    }
+  }
+}
+
+/* Category Grid Layout */
+.category-grid {
+  display: grid;
+  // Desktop par 4 columns, Tablet par 2, Mobile par 1
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  padding: 10px;
+}
+
+/* Individual Category Items */
+.cat-item {
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  padding: 40px 20px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #333;
+  border-radius: 4px; // Sharp corporate corners
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+
+  /* Hover Magic - Wipro Style Blue Border */
+  &:hover {
+    background: #f8fafc;
+    border-color: #3880ff;
+    color: #3880ff;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(56, 128, 255, 0.1);
+  }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .career-categories {
+    padding: 50px 20px;
+    
+    h2 {
+      font-size: 1.8rem;
+    }
+  }
+
+  .cat-item {
+    padding: 30px 15px;
+    font-size: 1rem;
+  }
+}

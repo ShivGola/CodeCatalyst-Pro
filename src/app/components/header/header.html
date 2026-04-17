@@ -1,0 +1,44 @@
+<header [class.navbar-active]="isScrolled" [class.menu-open]="isMenuOpen">
+  <div class="nav-container">
+    
+    <!-- Logo -->
+    <div class="logo" (click)="navigateTo('home')">
+      <span class="code">Code</span>
+      <span class="catalyst">Catalyst</span>
+    </div>
+
+    <!-- Desktop Navigation -->
+    <nav class="nav-links">
+      <a (click)="navigateTo('home')" [class.active]="isActive('hero')">Home</a>
+      <a (click)="navigateTo('solutions')" [class.active]="isActive('solutions-section')">Solutions</a>
+      <a (click)="navigateTo('industries')" [class.active]="isActive('industries-section')">Industries</a>
+      <a (click)="navigateTo('expertise')" [class.active]="isActive('expertise-section')">Expertise</a>
+      <a (click)="navigateTo('careers')" [class.active]="currentRoute === '/careers'">Careers</a>
+    </nav>
+
+    <!-- Contact Button -->
+    <button class="btn-contact" (click)="navigateTo('contact')">
+      CONTACT US
+    </button>
+
+    <!-- Mobile Toggle -->
+    <div class="mobile-toggle" (click)="toggleMobileMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+  </div>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" [class.active]="isMenuOpen">
+    <ul class="mobile-nav-links">
+      <li><a (click)="navigateTo('home')">Home</a></li>
+      <li><a (click)="navigateTo('solutions')">Solutions</a></li>
+      <li><a (click)="navigateTo('industries')">Industries</a></li>
+      <li><a (click)="navigateTo('expertise')">Expertise</a></li>
+      <li><a (click)="navigateTo('careers')">Careers</a></li>
+      <li><button class="mobile-contact-btn" (click)="navigateTo('contact')">CONTACT US</button></li>
+    </ul>
+  </div>
+</header>

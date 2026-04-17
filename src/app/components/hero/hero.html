@@ -1,0 +1,78 @@
+<section class="careers-hero">
+  <div class="overlay">
+    <div class="content">
+      <span class="sub-title">CAREERS AT CODECATALYST</span>
+      <h1>Build your dream career <br> <span>with innovation.</span></h1>
+      
+      <div class="search-box">
+        <div class="input-group">
+          <i class="fas fa-search"></i>
+          <input type="text" [(ngModel)]="searchQuery" placeholder="Job title or keywords">
+        </div>
+        <div class="input-group border-left">
+          <i class="fas fa-map-marker-alt"></i>
+          <input type="text" [(ngModel)]="locationQuery" placeholder="Location">
+        </div>
+        <button class="btn-search" (click)="handleSearch()">Find Jobs</button>
+      </div>
+      <p class="count-text">{{ filteredJobs.length }} open roles currently</p>
+    </div>
+  </div>
+</section>
+
+<div class="filter-strip">
+  <div class="container">
+    <div class="filter-row">
+      <div class="f-item">
+        <label>Department</label>
+        <select [(ngModel)]="selectedDepartment" (change)="onDepartmentChange()">
+          <option value="all">All Departments</option>
+          <ng-container *ngFor="let dept of departments">
+            <option *ngIf="dept !== 'all'" [value]="dept">{{ dept }}</option>
+          </ng-container>
+        </select>
+      </div>
+      <div class="f-item">
+        <label>Work Type</label>
+        <select [(ngModel)]="selectedJobType" (change)="onJobTypeChange()">
+          <option value="all">All Types</option>
+          <ng-container *ngFor="let type of jobTypes">
+            <option *ngIf="type !== 'all'" [value]="type">{{ type }}</option>
+          </ng-container>
+        </select>
+      </div>
+      <button class="btn-clear" (click)="clearFilters()">Reset</button>
+    </div>
+  </div>
+</div>
+
+<section class="jobs-display">
+  <div class="container">
+    <div class="grid" *ngIf="filteredJobs.length > 0; else emptyState">
+      <div class="job-card" *ngFor="let job of filteredJobs">
+        <div class="card-head">
+          <span class="dept-tag">{{ job.department }}</span>
+          <span class="type-pill" [ngClass]="job.type.toLowerCase()">{{ job.type }}</span>
+        </div>
+        <h3>{{ job.title }}</h3>
+        <div class="meta">
+          <span><i class="fas fa-location-dot"></i> {{ job.location }}</span>
+          <span><i class="fas fa-briefcase"></i> {{ job.experience }}</span>
+        </div>
+        <p class="desc">{{ job.description | slice:0:120 }}...</p>
+        <div class="card-footer">
+          <button class="link-btn" (click)="viewJobDetails(job)">Details</button>
+          <button class="apply-btn" (click)="applyForJob(job)">Apply Now</button>
+        </div>
+      </div>
+    </div>
+    
+    <ng-template #emptyState>
+      <div class="no-results">
+        <img src="https://illustrations.popsy.co/gray/search.svg" alt="No jobs" width="200">
+        <h3>No matching jobs found</h3>
+        <p>Try changing your filters or search keywords.</p>
+      </div>
+    </ng-template>
+  </div>
+</section>
